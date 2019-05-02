@@ -274,7 +274,7 @@ class TableGan(object):
 
         self.saver = tf.train.Saver()
 
-    def train(self, config, experiment):
+    def train(self, config):
         print("Start Training...\n")
 
         d_optim = tf.train.AdamOptimizer(config.learning_rate, beta1=config.beta1) \
@@ -514,10 +514,7 @@ class TableGan(object):
                     })
 
                 counter += 1
-                experiment.log_metric("d_loss", errD_fake + errD_real, step=idx)
-                experiment.log_metric("g_loss", errG, step=idx)
                 if self.y_dim:
-                    experiment.log_metric("c_loss", errC, step=idx)
                     print("Dataset: [%s] -> [%s] -> Epoch: [%2d] [%4d/%4d] time: %4.4f, d_loss: %.8f, g_loss: %.8f, "
                           "c_loss: %.8f" % (config.dataset, config.test_id, epoch, idx, batch_idxs,
                                             time.time() - start_time, errD_fake + errD_real, errG, errC))
