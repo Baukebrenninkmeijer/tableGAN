@@ -1,3 +1,6 @@
+## DISCLAIMER: in my testing this doesn't perform very well, so my guess is there is still a bug somewhere. Additionally, restrain the nr of classes for the classifier to two. There seems to be a bug that uncontrollably increases the classifier loss if the number of classes is higher than 2.
+
+
 # table-GAN
 **tableGAN** is the implementation of [Data Synthesis based on Generative Adversarial Networks](http://www.vldb.org/pvldb/vol11/p1071-park.pdf "tableGAN") paper. It is a synthetic data generation technique which has been implemented using a deep learning model based on **Generative Adversarial Network (GAN)** architecture. The goal of this technique is to protect sensitive data against re-identification attacks by producing synthetic data out of real data while preserving statistical features. 
 
